@@ -46,8 +46,8 @@ class App extends Component{
   }
   render(){
     return(
-      <div className="wrapper">
-        <div className="main">
+      <div className="main">
+        <div className="card">
             <Title/>
             <div className="form-container">
               <Form getWeather={this.getWeather}/>
