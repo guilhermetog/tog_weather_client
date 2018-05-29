@@ -22,7 +22,7 @@ class App extends Component{
     const city = e.target.elements.city.value
 
     if(city){
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&unit=metric`)
+      const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&unit=metric`)
       const data = await api_call.json()
       
       this.setState({
