@@ -5,7 +5,6 @@ This is a weather web app that made in ReactJs.
 It's intend to present weather data in a clever and elegant way. It will be part of my interactive portifolio. It will be changed depending on demand.
 
 ## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
  
@@ -14,7 +13,6 @@ If you're using any code style like xo, standard etc. That will help others whil
  [TogWeather](https://guilhermetog.github.io/weather/)
 
 ## Tech/framework used
-Ex. -
 
 <b>Built with</b>
 - [ReactJs](https://reactjs.org/)
@@ -63,6 +61,5 @@ Ex. -
 
 
 ## License
-A short snippet describing the license (MIT, Apache etc)
 
 MIT © [Guilherme]()
