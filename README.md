@@ -2,8 +2,7 @@
 This is a weather web app that made in ReactJs.
 
 ## Motivation
-It's intend to present weather data in a clever and elegant way. It will be part of my interactive portifolio.
-It was created based on . It will be changed depending on demand.
+It's intend to present weather data in a clever and elegant way. It will be part of my interactive portifolio. It will be changed depending on demand.
 
 ## Code style
 If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
