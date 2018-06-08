@@ -1,0 +1,68 @@
+.SearchBar{
+    z-index: 1;
+}
+
+.SearchBar .animation{
+    transition: 0.5s;
+}
+
+.SearchBar .stoped{
+    transition: none;
+}
+
+.SearchBar .search_bar{
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    height: 10vh;
+    margin: 3%;
+    border-radius: 10vh;
+    background-color: #7657;
+    justify-content: flex-end;
+}
+
+.SearchBar .opened{
+    width: 94%;
+}
+
+.SearchBar .closed{
+    width: 10vh;
+}
+
+.SearchBar button{
+    height: 9vh;
+    width: 9vh;
+    background: #dca;
+    border-radius: 9vh;
+    border: none;
+    padding: 1.5vh;
+    margin: 0.5vh;
+    order: 1;
+    outline: none;
+}
+
+.SearchBar input{
+    margin: 1vh 1vh 1vh 6vh;
+    flex: 1;
+    background-color: #0000;
+    border: none;
+    outline: none;
+    font-size: 5vh; 
+}
+
+.SearchBar input::placeholder{
+    color:white;
+}
+
+.visible{
+    display: inline-flex;
+    transition: 0.5s; 
+}
+
+.invisible{
+    display: none;
+    transition: 0.5s; 
+}
+

@@ -1,0 +1,51 @@
+
+.title_app{
+  width: 100%;
+  flex: 1;
+  position: relative;
+  font-size: 1.5vw; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+}
+
+
+.title-container__title {
+  display: inline-block;
+  width: 90%;
+  max-width: 30vw;
+  background: url("../../assets/img/logo_app.png") center center no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  flex: 60%;
+}
+  
+.title-container__subtitle {
+  flex: 40%;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  font-family: "Merriweather", serif;
+  text-align: center;
+  color: wheat;
+  text-shadow:1px px 3px #000;
+}
+
+.text_minimized{
+  font-size: 1em;
+  margin-bottom: 1vh;
+}
+
+
+@media(max-width:850px){
+  .title-container__subtitle{
+    font-size: 2em;
+  }
+
+  .title-container__title {
+    max-width: 80vw;
+  }
+}

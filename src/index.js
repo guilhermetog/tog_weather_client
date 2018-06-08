@@ -1,9 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import App from './App';
+// import './index.css';
+import Roteamento from './routes'
+import {BrowserRouter} from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+//Redux
+import store from './store'
+import {Provider} from 'react-redux'
+
+//Roteador
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <Roteamento/>
+        </BrowserRouter>
+    </Provider>
+    , document.getElementById('root'));
+
+
+
 registerServiceWorker();
