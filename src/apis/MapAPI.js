@@ -11,12 +11,15 @@ import * as Weather from "./WeatherAPI"
 
 const GOOGLE_API= "AIzaSyBJ3JR4k3nNtvyMpSqetyVxSXMycseWuMc"
 
-function OMap(id){
+function OMap(id, changeHandler){
 
     this.view = new View({
-        center: [0, 0],
-        zoom: 2,
-        projection: 'EPSG:4326'
+        center: [-51.8656822,-15.7455785],
+        zoom: 4,
+        minZoom:4,
+        maxZoom:10,
+        projection: 'EPSG:4326',
+        extent: [-140.147233,-50.2538974,178.833183,50.844431],
     })
 
     this.pointer = new SourceVector()
@@ -42,13 +45,12 @@ function OMap(id){
         tracking: true
     })  
 
-    setTimeout(()=>{
+    this.build = (location)=>{
         this.pointer.clear()
-        this.pointer.addFeature(new Feature({geometry:new Point(this.location.getPosition())}))
+        this.pointer.addFeature(new Feature({geometry:new Point(location.getPosition())}))
         this.view.setCenter(this.location.getPosition())
         this.view.setZoom(7)
-    },1000)
-
+    }
 
     this.changePoint = (evt)=>{
         this.pointer.clear()
@@ -58,10 +60,14 @@ function OMap(id){
         return evt
     }
 
+    this.map.on("click",changeHandler)
+
     return {
         map: this.map,
         changePoint: this.changePoint,
-        getCity: this.getCity
+        getCity: this.getCity,
+        build: this.build,
+        location: this.location
     }
 
 }
@@ -84,7 +90,9 @@ export const getCity = async (location,callback)=>{
             return{
                 city: address[0].short_name,
                 state: address[1].short_name,
-                country: address[2].short_name
+                country: address[2].short_name,
+                lat: location[1],
+                long: location[0]
             }
         }else{
             return {}

@@ -12,13 +12,13 @@ function currentWeatherReducer(state = {
     currentLocation:{
         city:"",
         state:"",
-        country:""
+        country:"",
+        lat:"",
+        long:"",
     }
 }, action = {}){
     switch(action.type){
         case 'WEATHER_CHANGED':
-            console.log({texto:"Estado da store antes: ",data: state})
-            console.log({texto:"Valor da action: ",data: action.data} )
             return {
                 ...action.data
             }

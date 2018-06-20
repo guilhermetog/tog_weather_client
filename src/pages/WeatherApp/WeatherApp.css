@@ -6,7 +6,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body {
@@ -20,7 +19,7 @@ body {
   flex: 1;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to right, #236, #124);
+  background-size: cover;
   display: flex;
   align-items: center;
   align-content: center;
@@ -28,9 +27,77 @@ body {
   padding: 2%;
 }
 
-@media(max-width:850px){
+.display{
+  position: relative;
+  background-size: cover;
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color:#0000;
+  overflow: hidden;
+}
+
+.display-map{
+  flex: 1;
+  display:flex;
+  position: relative;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  border-top:1px solid white;
+  border-left:1px solid white;
+  border-right:1px solid #888;
+  border-bottom:1px solid #888;
+  box-shadow: 1px 1px 5px #0005;
+  box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
+  border-radius: 5vh;
+  background: linear-gradient(135deg, rgba(153,153,153,0.5) 0%, rgba(179,179,179,0.46) 12%, rgba(13,13,13,0.41) 25%, rgba(143,143,143,0.41) 25%, rgba(87,87,87,0.33) 50%, rgba(0,0,0,0.32) 51%, rgba(36,36,36,0.29) 60%, rgba(87,87,87,0.23) 76%, rgba(56,56,56,0.18) 91%, rgba(36,36,36,0.15) 100%);
+}
+
+@media(orientation:portrait),(orientation: landscape) and (max-width: 700px){
   .main{
     align-items: flex-start;
     overflow-y: scroll;
   }
+
+  .card{
+    flex-direction: column;
+    height: 200%;
+    margin-bottom: 2%;
+  }
+}
+
+
+.img-broken-clouds{
+  background:url('../../assets/img/display_broken_clouds.jpg') no-repeat center center;
+}
+.img-clear-sky{
+  background:url('../../assets/img/display_clear_sky.jpg') no-repeat center center;
+}
+.img-few-clouds{
+  background:url('../../assets/img/display_few_clouds.jpg') no-repeat center center;
+}
+.img-mist{
+  background:url('../../assets/img/display_mist.jpg') no-repeat center center;
+}
+.img-rain{
+  background:url('../../assets/img/display_rain.jpg') no-repeat center center;
+}
+.img-scattered-clouds{
+  background:url('../../assets/img/display_scattered_clouds.jpg') no-repeat center center;
+}
+.img-shower-rain{
+  background:url('../../assets/img/display_broken_clouds.jpg') no-repeat center center;
+}
+.img-snow{
+  background:url('../../assets/img/display_snow.jpg') no-repeat center center;
+}
+.img-thunderstorm{
+  background:url('../../assets/img/display_thunderstorm.jpg') no-repeat center center;
 }

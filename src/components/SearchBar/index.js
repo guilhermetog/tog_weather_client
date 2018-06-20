@@ -1,48 +1,50 @@
-import React, {Component} from "react"
-import "./SearchBar.css"
-import IconSearch from "./search_icon.js"
+import React from 'react'
+import s from './SearchBar.less'
 
-class SearchBar extends Component{
+class SearchBar extends React.Component{
+    state={
+      opened:false,
+      in:"",
+      onTransition: false,
+    }
     
-    state = {
-        closed: true,
-        transition: false,
-        value:""
+    transition =()=>{
+      this.setState({onTransition: true })
+      setTimeout(()=>{
+            this.setState({onTransition: false})
+      },1000)
     }
-
-    Search = async (e) =>{
-        e.preventDefault()  
-
-        if(this.state.closed){
-            this.setState({transition:true})
-            this.setState({closed:false})
-            setTimeout(()=>this.setState({transition:false}),500)
-        }else{
-            if(this.state.value){
-                this.props.searchHandler(this.state.value)
-            }
-            this.setState({transition:true})
-            this.setState({closed:true})
-            setTimeout(()=>this.setState({transition:false,value:""}),500)
-        }
+  
+    switch=(e)=>{
+      e.preventDefault()
+      this.transition()
+      if(this.state.opened && this.state.in){
+        this.props.searchHandler(this.state.in)
+      }
+      this.setState({
+        opened: !this.state.opened,
+        in:""
+      })
     }
-
+    
     render(){
-        return(
-            <div className="SearchBar">
-                <form onSubmit={this.Search} className={`search_bar 
-                                                    ${this.state.closed?'closed':'opened'}
-                                                    ${this.state.transition?'animation':'stoped'}`}>
-                    <input type="text" name="in" placeholder={this.props.placeholder}
-                            className={`${this.state.closed?'invisible':'visible'}`}
-                            value={this.state.value} onChange={(e)=>this.setState({value:e.target.value})}/>
-                    <button>
-                        <IconSearch/>
-                    </button>
-                </form>
-            </div>
-        )
+      return(
+       <form className={`${s.search_container} ${s.left}`} onSubmit={this.switch}>
+         <div className={`${s.search_bar} ${this.state.onTransition && s.transition} 
+                                          ${this.state.opened? s.opened:s.closed}`}>
+           {this.state.opened &&
+              <input className={`${s.search_input} ${this.state.onTransition && s.hidden}`} 
+                     placeholder="Search..."
+                     value={this.state.value} 
+                     onChange={(e)=>this.setState({in:e.target.value})}/>
+           }
+           <button type="submit" className={s.btn_search}>
+              <i className="fas fa-search"></i>
+           </button>
+         </div>
+       </form>
+      )
     }
-}
-
-export default SearchBar
+  }
+  
+  export default SearchBar

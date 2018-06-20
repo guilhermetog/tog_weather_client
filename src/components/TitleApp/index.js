@@ -1,22 +1,16 @@
-import React, {Component} from "react"
+import React from "react"
+import Logo from './logo_tog_weather.js'
 import "./TitleApp.css"
 
-class TitleApp extends Component{
-    state = {
-
-    }
-
-    minimize(){
-
-    }
-
-    render(){
-        return(
-        <div className="title_app">
-                <div className="title-container__title"></div>
-                <p className="title-container__subtitle text_minimized ">Saiba o tempo em qualquer lugar!</p>
-        </div>)
-    }
+const TitleApp =()=>{
+    return(
+    <div className="title_app">
+        <div className="title-container">
+            <Logo>Weather</Logo>    
+            <p className="title-container__subtitle text_minimized ">Saiba o tempo em qualquer lugar!</p>
+        </div>
+    </div>
+    )
 }
 
 

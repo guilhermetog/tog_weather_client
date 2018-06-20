@@ -1,11 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import Card from "../../components/Card"
-import Display from "../../components/Display"
-import DisplayWeatherNow from "../../components/DisplayWeatherNow"
+import DisplayWeather from "../../components/DisplayWeather"
 import TitleApp from "../../components/TitleApp"
-import Control from "../../components/Control"
 import SearchBar from "../../components/SearchBar"
 import OpenMap from "../../components/Map"
 
@@ -33,7 +30,6 @@ class WeatherApp extends Component{
         this.setState({
             ...this.context.store.getState().currentWeather
         })
-        console.log({label:"Dados do estado apos alteração: ",data:this.state})
     })
   }
 
@@ -54,19 +50,18 @@ class WeatherApp extends Component{
   render(){
     return(
       <Fragment>
-        <div className="main">
-          <Card>
-            <Display image={this.state.currentWeather.weather}>
+        <div className={`main img-${this.state.currentWeather.weather?this.state.currentWeather.weather:'clear-sky'}`}>
+          <div className="card">
+            <div className="display">
               {this.state.currentWeather.weather?
-                <DisplayWeatherNow weather={this.state.currentWeather} 
-                                  location={this.state.currentLocation}/>:''}
+                <DisplayWeather store={this.context.store}/>:''}
               <TitleApp/>
-            </Display>
-            <Control>
+            </div>
+            <div className="display-map">
               <OpenMap ref={this.setUpMap} />
               <SearchBar searchHandler={this.searchHandler} placeholder="Cidade..."/>
-            </Control>
-          </Card>
+            </div>
+          </div>
         </div> 
       </Fragment>
     )

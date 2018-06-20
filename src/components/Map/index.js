@@ -20,9 +20,8 @@ class OpenMap extends Component{
     }
 
     lookForCity = (city) =>{
-        getLocation(city).
-        then((location)=>{
-            console.log(location)
+        getLocation(city)
+        .then((location)=>{
             this.setState({
                 lat: location.lat,
                 long: location.long
@@ -34,15 +33,13 @@ class OpenMap extends Component{
 
     updateMap = () =>{
         var location = this.map.changePoint([this.state.lat,this.state.long])
-        console.log(location)
         getCity(location,(data)=>{
             this.context.store.dispatch({type:"WEATHER_CHANGED",data})
         })
     }
 
     componentDidMount(){
-        this.map = new OMap('map')
-        this.map.map.on("click", this.changePoint)
+        this.map = new OMap('map',this.changePoint)
     }
 
     render(){

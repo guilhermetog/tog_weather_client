@@ -1,0 +1,17 @@
+#logo_tog_weather{
+    fill: none;
+}
+
+#logo_tog_weather #logo{
+    fill: #000b;
+}
+
+#logo_tog_weather #rect{
+    fill: url("#grad");
+    stroke: rgb(56, 56, 56);
+}
+
+.spike{
+    fill: rgb(54, 53, 53);
+    stroke:  rgb(54, 53, 53);
+}
