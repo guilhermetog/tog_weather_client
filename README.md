@@ -29,22 +29,9 @@ It's intend to present weather data in a clever and elegant way. It will be part
     - Search through maps
     - Search for the name of the city
 
-## Layout Structure
+## Components
 
-        <div className="card">
-            <Title/>
-            <div className="form-container">
-              <Form getWeather={this.getWeather}/>
-              <Weather
-                temperature={this.state.temperature}
-                city={this.state.city}
-                country={this.state.country}
-                humidity={this.state.humidity}
-                description={this.state.description}
-                error={this.state.error}
-              />
-            </div>
-        </div>
+  Some of the components created for this projects are avaiable in my [Code Pen] (https://codepen.io/tognetti/)
 
 
 ## API Reference
