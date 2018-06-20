@@ -16,9 +16,18 @@ It's intend to present weather data in a clever and elegant way. It will be part
 
 <b>Built with</b>
 - [ReactJs](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Google Maps API](https://developers.google.com/maps/)
+- [OpenLayers](https://openlayers.org/)
+- [Less](lesscss.org/)
 
 ## Features
-    - Consult the temperature, humidity and weather based on the city
+
+    - Current Weather
+    - Max and Min temperature in the next 15 hours
+    - Correct date-time for every place
+    - Search through maps
+    - Search for the name of the city
 
 ## Layout Structure
 
@@ -38,18 +47,10 @@ It's intend to present weather data in a clever and elegant way. It will be part
         </div>
 
 
-
-## Installation
-
- - Inicialize a new react app project
- - Copy the components in the folder to your project
- - Copy the App.css or it's content to your project
- - Copy the App.js as a component of your project
-
 ## API Reference
 
- This app consume data from the [OpenWeatherMap](https://openweathermap.org/api)
-
+ This app consumes main data from [OpenWeatherMap](https://openweathermap.org/api)
+ This app also consumes extra data from [Google Maps API](https://developers.google.com/maps/)
 
 ## Contribute
 
@@ -58,8 +59,8 @@ It's intend to present weather data in a clever and elegant way. It will be part
 ## Credits
  - This app was made through the boilerplate [create-react-app](https://github.com/facebook/create-react-app)
  - This app is based on the following repository: [hamza-mirza](https://github.com/hamza-mirza/react-weather-app)
-
-
+ - All images used are provided for unsplash photographers and are available at [Photo Collection](https://unsplash.com/collections/2212738/weather-app-collection)
+ 
 ## License
 
-MIT © [Guilherme]()
+CC0 © [Guilherme]()
