@@ -123,7 +123,7 @@ class DisplayWeatherNow extends React.Component{
             <nobr>
             <div className={s.title}>
               <div className={s.location}>{`${this.state.currentLocation.city} - ${this.state.currentLocation.state}, ${this.state.currentLocation.country}`}</div>
-              <div className={s.date}>{`${this.state.date.getDay()} de ${this.resolveMonth()} de ${this.state.date.getFullYear()}`}</div>
+              <div className={s.date}>{`${this.state.date.getDate()} de ${this.resolveMonth()} de ${this.state.date.getFullYear()}`}</div>
             </div>
             </nobr>
             <div className={s.clock}>
