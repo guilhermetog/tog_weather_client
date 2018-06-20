@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "growl": "^1.10.0",
     "material-icons-react": "^1.0.0",
     "ol": "^4.6.5",
     "openlayers": "^4.6.5",
